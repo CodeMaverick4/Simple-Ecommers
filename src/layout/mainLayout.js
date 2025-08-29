@@ -5,7 +5,7 @@ const MainLayout = () => {
     return (
         <div className="position-relative">
             <Topbar />
-            <h1>The Generic</h1>
+            
             <Outlet />
             <Footer />
         </div>
