@@ -6,7 +6,7 @@ import MainContent from './components/main-content';
 
 function App() {
   return (
-    <div className="">
+    <div className="position-relative">
       <Topbar />
       <h1>The Generic</h1>
       <MainContent />

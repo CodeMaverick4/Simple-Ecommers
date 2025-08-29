@@ -1,56 +1,25 @@
-const cartElements = [
-
-    {
-
-        title: 'Colors',
-
-        price: 100,
-
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-
-        quantity: 2,
-
-    },
-
-    {
-
-        title: 'Black and white Colors',
-
-        price: 50,
-
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-
-        quantity: 3,
-
-    },
-
-    {
-
-        title: 'Yellow and Black Colors',
-
-        price: 70,
-
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-
-        quantity: 1,
-
-    }
-
-]
-
+import { useContext } from "react"
+import { CartContex } from "../context/cartContext"
 
 const Cart = () => {
+    const {cartItems,setCartItems} = useContext(CartContex);
+    
+    const handleRemoveItem = (title)=>{
+        console.log(title)
+        const filteredItems = cartItems.filter(item=> item.title !== title);
+        setCartItems(filteredItems);
+    }
     return (
         <div className="cart shadow-lg">
             <h4 className="text-center fw-semibold mb-3 ">Cart</h4>
-            <div className="d-flex justify-content-between align-items-center fw-bold fs-4">
+            <div className="d-flex justify-content-between align-items-center gap-4 fw-bold fs-5">
                 <span>ITEM</span>
                 <span>PRICE</span>
                 <span>QUANTITY</span>
             </div>
 
-            {cartElements.map((ele,index) =>
-                <div className="d-flex justify-content-between align-items-center gap-4 my-2">
+            {cartItems.items.map((ele,index) =>
+                <div key={`cartItem_${index}`} className="d-flex justify-content-between align-items-center gap-4 my-2">
                     <div>
                         <img src={ele.imageUrl} alt="" className="rounded-2" width={80} height={80} />
                         <span className="ms-2">Albumn {index+1}</span>
@@ -58,11 +27,11 @@ const Cart = () => {
                     <div >$ {ele.price}</div>
                     <div>
                         <input type="text" value={ele.quantity}/>
-                        <button>REMOVE</button>
+                        <button className="" onClick={()=>handleRemoveItem(ele.title)}>REMOVE</button>
                     </div>
                 </div>)}
             <div>
-                <h4 className="my-3 text-end"><b className="">Total </b> $0.00 </h4>
+                <h4 className="my-3 text-end"><b className="">Total </b> $ {cartItems.total} </h4>
             </div>
         </div>
     )

@@ -1,5 +1,8 @@
+import { useContext } from "react";
 import CardComponent from "./Card";
-const productsArr = [
+import { CartContex } from "../context/cartContext";
+
+const productArr = [
     {
         title: 'Colors',
         price: 100,
@@ -38,12 +41,13 @@ const productsArr = [
 
 ]
 const MainContent = () => {
+    const {cartItems,setCartItems} = useContext(CartContex);
     return (
         <section className="container">
             <h2 className="text-center mb-5 mt-3">Music</h2>
             <div className="d-flex justify-content-center">
                 <div className=" w-50 d-flex flex-wrap justify-content-center gap-4">
-                    {productsArr.map(product => <CardComponent product={product} />)}
+                    {productArr.map((product,index ) => <CardComponent key={`product_${index}`} product={product} />)}
                 </div>
             </div>
         </section>

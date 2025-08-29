@@ -50,7 +50,7 @@ h1 {
   z-index: 2000;
   padding: 20px 30px;
   border-radius: 7px;
-
+  color: black !important;
 }
 
 .cart span {
