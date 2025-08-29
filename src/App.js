@@ -1,17 +1,21 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Topbar from './components/Topbar';
-import Footer from './components/Footer';
-import MainContent from './components/main-content';
+import Home from './pages/home';
+import MainLayout from './layout/mainLayout';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import About from './pages/about';
+
 
 function App() {
   return (
-    <div className="position-relative">
-      <Topbar />
-      <h1>The Generic</h1>
-      <MainContent />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path={'/'} element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route path={'about'} element={<About />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
