@@ -1,6 +1,7 @@
 * {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 header {
   position: fixed;
   top: 0px;
@@ -38,6 +39,44 @@ h1 {
   font-weight: bold;
   border-radius: 4%;
   background: #56CCF2;
+}
+
+.cart {
+  position: absolute;
+  top: 68px;
+  right: 15px;
+  max-width: 40vw;
+  background-color: #fff;
+  z-index: 2000;
+  padding: 20px 30px;
+  border-radius: 7px;
+
+}
+
+.cart span {
+  border-bottom: 1px solid black;
+}
+
+.cart input {
+  width: 40px;
+  height: 30px;
+  border: 1px solid rgb(0, 204, 255);
+  border-radius: 8%;
+  outline: none;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.cart button {
+  color: white;
+  font-weight: bold;
+  background: rgb(231, 76, 76);
+  cursor: pointer;
+  border: none;
+  border-radius: 8%;
+  height: 30px;
+  outline: none;
+  padding: 0px 7px;
 }
 
 footer {

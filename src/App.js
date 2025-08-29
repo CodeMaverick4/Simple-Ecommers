@@ -7,10 +7,10 @@ import MainContent from './components/main-content';
 function App() {
   return (
     <div className="">
-      <Topbar/>
+      <Topbar />
       <h1>The Generic</h1>
-<MainContent/>
-      <Footer/>
+      <MainContent />
+      <Footer />
     </div>
   );
 }
